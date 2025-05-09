@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - AI Chatbot</title>
+    <link rel="stylesheet" href={% static 'styles.css' %} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Add Google Sign-In API -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Add Facebook SDK -->
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>AI<span>Chatbot</span></h1>
+      </div>
+    </nav>
+
+    <!-- Signup Section -->
+    <section class="auth-section">
+      <div class="auth-container">
+        <div class="auth-header">
+          <h2>Create an Account</h2>
+          <p>Sign up to experience the power of our AI Chatbot</p>
+        </div>
+        {% load static %}
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Sign up</button>
+</form>
+        <div class="auth-footer">
+          <p>Already have an account? <a href="login.html">Log In</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>AI<span>Chatbot</span></h2>
+            <p>
+              Experience the future of customer service with our AI-powered
+              chatbot solution. Automate responses and deliver exceptional
+              customer experiences.
+            </p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="#">Customer Support</a></li>
+                <li><a href="#">Marketing Automation</a></li>
+                <li><a href="#">E-commerce Assistance</a></li>
+                <li><a href="#">Workflow Automation</a></li>
+                <li><a href="#">Custom Solutions</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Stay updated with our latest features and releases.</p>
+            <form>
+              <input type="email" placeholder="Your Email Address" />
+              <button class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 AIChatbot. All rights reserved.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <form method="post">
+      {% csrf_token %}
+      <input type="hidden" name="email" value="{{ email }}" />
+      <input type="hidden" name="password" value="{{ password }}" />
+      <input type="hidden" name="full_name" value="{{ full_name }}" />
+      <input type="hidden" name="confirm_password" value="{{ confirm_password }}" />
+    </form>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon" id="chatbotIcon">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>AI Chatbot Assistant</h3>
+        <button class="close-btn" id="closeChatbot">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot-message">
+          <div class="message-content">
+            <p>Hello! How can I help you today?</p>
+          </div>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+  </body>
+</html>

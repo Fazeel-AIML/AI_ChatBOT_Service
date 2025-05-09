@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - AI Chatbot</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Add Google Sign-In API -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Add Facebook SDK -->
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>AI<span>Chatbot</span></h1>
+      </div>
+    </nav>
+    <!-- Login Section -->
+    <section class="auth-section">
+      <div class="auth-container">
+        <div class="auth-header">
+          <h2>Login to Your Account</h2>
+          <p>Welcome back! Please enter your details</p>
+        </div>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Login</button>
+      </form>
+        <div class="auth-footer">
+          <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Password Reset Modal -->
+    <div class="modal" id="passwordResetModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Reset Your Password</h2>
+        <p>
+          Enter your email address and we'll send you a link to reset your
+          password.
+        </p>
+        <form id="resetPasswordForm">
+          <div class="form-group">
+            <label for="resetEmail">Email</label>
+            <input
+              type="email"
+              id="resetEmail"
+              name="resetEmail"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Send Reset Link</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>AI<span>Chatbot</span></h2>
+          <p>Intelligent conversations for your business</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="services.html#chatbot">AI Chatbot</a></li>
+              <li><a href="services.html#support">Customer Support</a></li>
+              <li><a href="services.html#lead">Lead Generation</a></li>
+              <li><a href="services.html#analytics">Data Analytics</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a href="mailto:info@aichatbot.com">info@aichatbot.com</a>
+              </li>
+              <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+              <li><a href="contact.html">123 AI Street, Tech City</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Subscribe to our newsletter</h3>
+          <p>Get the latest updates and news</p>
+          <form>
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 AI Chatbot. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon" id="chatbotIcon">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>AI Chatbot Assistant</h3>
+        <button class="close-btn" id="closeChatbot">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot-message">
+          <div class="message-content">
+            <p>Hello! How can I help you today?</p>
+          </div>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Initialize Facebook SDK
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "123456789012345", // Replace with your Facebook App ID
+          cookie: true,
+          xfbml: true,
+          version: "v16.0",
+        });
+      };
+
+      // Toggle password visibility
+      document
+        .querySelector(".toggle-password")
+        .addEventListener("click", function () {
+          const passwordInput = document.getElementById("password");
+          const type =
+            passwordInput.getAttribute("type") === "password"
+              ? "text"
+              : "password";
+          passwordInput.setAttribute("type", type);
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+
+      // Traditional login form submission
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          const remember = document.getElementById("remember").checked;
+
+          // Here you would typically send a request to your server
+          // For demo purposes, we'll simulate a successful login
+          console.log("Login attempt:", { email, password, remember });
+
+          // Simulate authentication
+          simulateAuth(email, password)
+            .then((response) => {
+              // Store user info in localStorage or sessionStorage based on remember me
+              const storage = remember ? localStorage : sessionStorage;
+              storage.setItem(
+                "user",
+                JSON.stringify({
+                  email: email,
+                  name: email.split("@")[0], // Just using email username as name for demo
+                  isLoggedIn: true,
+                  loginMethod: "traditional",
+                })
+              );
+
+              // Redirect to dashboard or home page
+              window.location.href = "index.html";
+            })
+            .catch((error) => {
+              alert("Login failed: " + error.message);
+            });
+        });
+
+      // Google Sign-In
+      document
+        .getElementById("googleLogin")
+        .addEventListener("click", function () {
+          // In a real implementation, you would use Google's authentication API
+          // For demo purposes, we'll simulate a Google login
+          const googleUser = {
+            email: "user@gmail.com",
+            name: "Google User",
+            isLoggedIn: true,
+            loginMethod: "google",
+          };
+
+          sessionStorage.setItem("user", JSON.stringify(googleUser));
+          console.log("Logged in with Google:", googleUser);
+          window.location.href = "index.html";
+        });
+
+      // Facebook Login
+      document
+        .getElementById("facebookLogin")
+        .addEventListener("click", function () {
+          // In a real implementation, you would use Facebook's authentication API
+          // For demo purposes, we'll simulate a Facebook login
+          FB.login(
+            function (response) {
+              if (response.status === "connected") {
+                // Simulate getting user data from Facebook
+                const facebookUser = {
+                  email: "user@facebook.com",
+                  name: "Facebook User",
+                  isLoggedIn: true,
+                  loginMethod: "facebook",
+                };
+
+                sessionStorage.setItem("user", JSON.stringify(facebookUser));
+                console.log("Logged in with Facebook:", facebookUser);
+                window.location.href = "index.html";
+              } else {
+                console.log("Facebook login failed or was cancelled");
+              }
+            },
+            { scope: "public_profile,email" }
+          );
+        });
+
+      // Password reset modal
+      const modal = document.getElementById("passwordResetModal");
+      const forgotPasswordLink = document.getElementById("forgotPassword");
+      const closeModal = document.querySelector(".close-modal");
+
+      forgotPasswordLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.style.display = "block";
+      });
+
+      closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      // Password reset form
+      document
+        .getElementById("resetPasswordForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = document.getElementById("resetEmail").value;
+
+          // Here you would send a password reset email
+          console.log("Password reset requested for:", email);
+
+          // Show confirmation and close modal
+          alert("Password reset link has been sent to your email.");
+          modal.style.display = "none";
+        });
+
+      // Helper function to simulate authentication (would be server-side in production)
+      function simulateAuth(email, password) {
+        return new Promise((resolve, reject) => {
+          // Simulate server delay
+          setTimeout(() => {
+            // In a real app, this would be a server-side check
+            if (email.includes("@") && password.length >= 6) {
+              resolve({ success: true });
+            } else {
+              reject(
+                new Error("Invalid credentials. Please check and try again.")
+              );
+            }
+          }, 1000);
+        });
+      }
+
+      // Mobile menu toggle
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+      });
+
+      // Chatbot functionality
+      const chatbotIcon = document.getElementById("chatbotIcon");
+      const chatbotContainer = document.getElementById("chatbotContainer");
+      const closeChatbot = document.getElementById("closeChatbot");
+      const userInput = document.getElementById("userInput");
+      const sendMessage = document.getElementById("sendMessage");
+      const chatbotMessages = document.getElementById("chatbotMessages");
+
+      // Toggle chatbot visibility
+      chatbotIcon.addEventListener("click", function () {
+        chatbotContainer.style.display = "flex";
+        chatbotIcon.style.display = "none";
+      });
+
+      // Close chatbot
+      closeChatbot.addEventListener("click", function () {
+        chatbotContainer.style.display = "none";
+        chatbotIcon.style.display = "flex";
+      });
+
+      // Send message functionality
+      sendMessage.addEventListener("click", function () {
+        sendUserMessage();
+      });
+
+      userInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          sendUserMessage();
+        }
+      });
+
+      // Function to send user message and get response
+      function sendUserMessage() {
+        const message = userInput.value.trim();
+        if (!message) return;
+
+        // Display user message
+        displayMessage(message, "user");
+        userInput.value = "";
+
+        // Get simple AI response
+        setTimeout(() => {
+          const response = getSimpleResponse(message);
+          displayMessage(response, "bot");
+        }, 800);
+      }
+
+      // Function to display messages in the chatbot
+      function displayMessage(message, sender) {
+        const messageElement = document.createElement("div");
+        messageElement.classList.add("message");
+        messageElement.classList.add(sender + "-message");
+
+        const contentElement = document.createElement("div");
+        contentElement.classList.add("message-content");
+        contentElement.innerHTML = `<p>${message}</p>`;
+
+        messageElement.appendChild(contentElement);
+        chatbotMessages.appendChild(messageElement);
+
+        // Scroll to bottom of messages
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+
+      // Simple responses for the chatbot
+      function getSimpleResponse(message) {
+        const lowerMsg = message.toLowerCase();
+
+        if (lowerMsg.includes("hello") || lowerMsg.includes("hi")) {
+          return "Hello! How can I help you today?";
+        } else if (lowerMsg.includes("help") || lowerMsg.includes("login")) {
+          return "I'm here to help with your login process! If you're having trouble logging in, make sure you're using the correct email and password. You can also use social login options for quicker access.";
+        } else if (
+          lowerMsg.includes("forgot") ||
+          lowerMsg.includes("reset") ||
+          lowerMsg.includes("password")
+        ) {
+          return "To reset your password, click the 'Forgot Password?' link below the login form. You'll receive an email with instructions to create a new password.";
+        } else if (
+          lowerMsg.includes("sign up") ||
+          lowerMsg.includes("register") ||
+          lowerMsg.includes("account")
+        ) {
+          return "Don't have an account yet? Click the 'Sign Up' button in the top navigation to create a new account. It only takes a minute!";
+        } else if (
+          lowerMsg.includes("contact") ||
+          lowerMsg.includes("support")
+        ) {
+          return "You can reach our support team at support@aichatbot.com or call us. We're available 24/7 to assist you.";
+        } else if (lowerMsg.includes("thank")) {
+          return "You're welcome! Is there anything else I can help you with regarding the login process?";
+        } else {
+          return "I appreciate your message. Could you provide more details so I can better assist you with logging in? If you're experiencing specific issues, please let me know.";
+        }
+      }
+    </script>
+  </body>
+</html>

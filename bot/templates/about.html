@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - AI Chatbot</title>
+    <link rel="stylesheet" href={% static 'styles.css' %} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>AI<span>Chatbot</span></h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href={% url 'index' %} class="active">Home</a></li>
+        <li><a  href={% url 'services'%} >Services</a></li>
+        <li><a href={% url 'about' %}>About</a></li>
+        <li><a href={% url 'features' %}>Features</a></li>
+        <li><a href={% url 'contact' %}>Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href={% url 'login' %} class="btn btn-outline">Login</a>
+        <a href={% url 'signup' %} class="btn btn-primary">Sign Up</a>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="container">
+        <h1>About Us</h1>
+        <p>Get to know the team behind the AI Chatbot revolution</p>
+      </div>
+    </header>
+
+    <!-- Our Story Section -->
+    <section class="our-story">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Story</h2>
+          <p>How we're transforming customer engagement through AI</p>
+        </div>
+        <div class="story-content">
+          <div class="story-image">
+            <img src="images/about-story.jpg" alt="Company History" />
+          </div>
+          <div class="story-text">
+            <p>
+              Founded in 2018, AI Chatbot began with a vision to revolutionize
+              how businesses communicate with their customers. What started as a
+              small team of AI enthusiasts and software engineers has grown into
+              a cutting-edge technology company at the forefront of
+              conversational AI.
+            </p>
+            <p>
+              Our journey began when our founders, experienced in customer
+              service and artificial intelligence, recognized a significant gap
+              between customer expectations and the digital support experiences
+              most companies provided. They saw an opportunity to leverage
+              advances in natural language processing and machine learning to
+              create more human-like, intelligent automated conversations.
+            </p>
+            <p>
+              After two years of intensive research and development, we launched
+              our first AI chatbot platform in 2020. Since then, we've
+              continuously improved our technology, expanded our services, and
+              helped hundreds of businesses transform their customer engagement
+              strategies.
+            </p>
+            <p>
+              Today, we're proud to be recognized as an industry leader in AI
+              chatbot solutions, with a growing team of experts dedicated to
+              pushing the boundaries of what's possible in conversational AI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="mission-values">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Mission & Values</h2>
+          <p>What drives us and shapes our approach</p>
+        </div>
+        <div class="mission-values-content">
+          <div class="mission-box">
+            <h3>Our Mission</h3>
+            <p>
+              To empower businesses with intelligent conversational AI that
+              enhances customer experiences, drives efficiency, and delivers
+              measurable business value.
+            </p>
+            <p>
+              We believe that AI should make human connections more meaningful,
+              not replace them. Our mission is to create technology that
+              augments human capabilities, allowing businesses to focus on what
+              matters most - building relationships with their customers.
+            </p>
+          </div>
+          <div class="values-grid">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h4>Innovation</h4>
+              <p>
+                We constantly push the boundaries of what's possible in AI,
+                investing in research and development to stay at the cutting
+                edge.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-user-shield"></i>
+              </div>
+              <h4>Trust & Security</h4>
+              <p>
+                We prioritize data security and privacy in everything we do,
+                building solutions that our clients and their customers can
+                trust.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h4>Partnership</h4>
+              <p>
+                We view our clients as partners, working collaboratively to
+                ensure their success and growth through our technology.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h4>Customer-Centric</h4>
+              <p>
+                We design our solutions with the end-user experience in mind,
+                ensuring intuitive and helpful interactions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="our-team">
+      <div class="container">
+        <div class="section-header">
+          <h2>Meet Our Team</h2>
+          <p>The experts behind our innovative chatbot solutions</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-image">
+              <img src="images/team-member-1.jpg" alt="Sarah Johnson" />
+            </div>
+            <div class="member-info">
+              <h3>Sarah Johnson</h3>
+              <p class="member-title">Co-Founder & CEO</p>
+              <p class="member-bio">
+                With 15+ years in tech leadership and a background in AI
+                research, Sarah drives our vision and strategic direction. Prior
+                to founding AI Chatbot, she led AI initiatives at major tech
+                firms.
+              </p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img src="images/team-member-2.jpg" alt="David Chen" />
+            </div>
+            <div class="member-info">
+              <h3>David Chen</h3>
+              <p class="member-title">Co-Founder & CTO</p>
+              <p class="member-bio">
+                David leads our technical strategy and R&D efforts. An expert in
+                NLP and machine learning, he previously developed AI systems for
+                language understanding at leading research labs.
+              </p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img src="images/team-member-3.jpg" alt="Mia Rodriguez" />
+            </div>
+            <div class="member-info">
+              <h3>Mia Rodriguez</h3>
+              <p class="member-title">Head of Product</p>
+              <p class="member-bio">
+                Mia shapes our product roadmap and ensures our solutions meet
+                real customer needs. She brings over a decade of experience in
+                product management for SaaS and AI solutions.
+              </p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img src="images/team-member-4.jpg" alt="James Wilson" />
+            </div>
+            <div class="member-info">
+              <h3>James Wilson</h3>
+              <p class="member-title">Head of AI Research</p>
+              <p class="member-bio">
+                James leads our AI research team, focusing on advancing our NLP
+                capabilities and machine learning models. He holds a Ph.D. in
+                Computer Science with a specialization in conversational AI.
+              </p>
+              <div class="member-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Stats -->
+    <section class="company-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number" data-count="5">5</div>
+            <div class="stat-label">Years in Business</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" data-count="500">500+</div>
+            <div class="stat-label">Clients Worldwide</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" data-count="50">50+</div>
+            <div class="stat-label">Team Members</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" data-count="25">25M+</div>
+            <div class="stat-label">Conversations Processed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Clients Say</h2>
+          <p>
+            Hear from businesses that have transformed with our chatbot
+            solutions
+          </p>
+        </div>
+        <div class="testimonial-carousel">
+          <div class="testimonial-item active">
+            <div class="testimonial-content">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                Implementing AI Chatbot's solution increased our customer
+                satisfaction rate by 35% while reducing support costs by nearly
+                40%. Their team was incredibly supportive throughout the
+                implementation process.
+              </p>
+              <div class="testimonial-author">
+                <img src="images/testimonial-1.jpg" alt="Jennifer Lee" />
+                <div class="author-info">
+                  <h4>Jennifer Lee</h4>
+                  <p>Customer Service Director, TechRetail Inc.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                The lead qualification capabilities of AI Chatbot have
+                revolutionized our sales process. We're seeing higher quality
+                leads and our sales team can focus on closing instead of
+                qualifying prospects.
+              </p>
+              <div class="testimonial-author">
+                <img src="images/testimonial-2.jpg" alt="Michael Barnes" />
+                <div class="author-info">
+                  <h4>Michael Barnes</h4>
+                  <p>VP of Sales, MarketGrowth Solutions</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                What impressed us most was how quickly the chatbot learned our
+                business and was able to provide accurate, helpful responses to
+                our customers. The analytics have also given us valuable
+                insights into customer needs.
+              </p>
+              <div class="testimonial-author">
+                <img src="images/testimonial-3.jpg" alt="Sophia Martinez" />
+                <div class="author-info">
+                  <h4>Sophia Martinez</h4>
+                  <p>CEO, InnovateHealth</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-control" data-direction="prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="carousel-indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+          </div>
+          <button class="carousel-control" data-direction="next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Join Us -->
+    <section class="cta-section join-us">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Join Our Growing Team</h2>
+          <p>
+            We're always looking for talented individuals who are passionate
+            about AI and creating exceptional customer experiences.
+          </p>
+          <a href="#" class="btn btn-primary">View Open Positions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>AI<span>Chatbot</span></h2>
+            <p>
+              Experience the future of customer service with our AI-powered
+              chatbot solution. Automate responses and deliver exceptional
+              customer experiences.
+            </p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Services</h3>
+              <ul>
+                <li>
+                  <a href="services.html#customer-support">Customer Support</a>
+                </li>
+                <li>
+                  <a href="services.html#marketing-automation"
+                    >Marketing Automation</a
+                  >
+                </li>
+                <li>
+                  <a href="services.html#ecommerce-assistance"
+                    >E-commerce Assistance</a
+                  >
+                </li>
+                <li>
+                  <a href="services.html#workflow-automation"
+                    >Workflow Automation</a
+                  >
+                </li>
+                <li>
+                  <a href="services.html#custom-solutions">Custom Solutions</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Stay updated with our latest features and releases.</p>
+            <form>
+              <input type="email" placeholder="Your Email Address" />
+              <button class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 AI Chatbot. All rights reserved.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon" id="chatbotIcon">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>AI Chatbot Assistant</h3>
+        <button class="close-btn" id="closeChatbot">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot-message">
+          <div class="message-content">
+            <p>Hello! How can I help you today?</p>
+          </div>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu toggle
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+      });
+
+      // Testimonial carousel
+      const testimonialItems = document.querySelectorAll(".testimonial-item");
+      const indicators = document.querySelectorAll(
+        ".carousel-indicators .indicator"
+      );
+      const prevButton = document.querySelector(
+        '.carousel-control[data-direction="prev"]'
+      );
+      const nextButton = document.querySelector(
+        '.carousel-control[data-direction="next"]'
+      );
+      let currentIndex = 0;
+
+      function showTestimonial(index) {
+        // Hide all testimonials
+        testimonialItems.forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        // Update indicators
+        indicators.forEach((indicator) => {
+          indicator.classList.remove("active");
+        });
+
+        // Show selected testimonial
+        testimonialItems[index].classList.add("active");
+        indicators[index].classList.add("active");
+        currentIndex = index;
+      }
+
+      // Event listeners for indicators
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+          showTestimonial(index);
+        });
+      });
+
+      // Event listeners for prev/next buttons
+      prevButton.addEventListener("click", () => {
+        let newIndex = currentIndex - 1;
+        if (newIndex < 0) newIndex = testimonialItems.length - 1;
+        showTestimonial(newIndex);
+      });
+
+      nextButton.addEventListener("click", () => {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= testimonialItems.length) newIndex = 0;
+        showTestimonial(newIndex);
+      });
+
+      // Auto-rotate testimonials every 5 seconds
+      setInterval(() => {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= testimonialItems.length) newIndex = 0;
+        showTestimonial(newIndex);
+      }, 5000);
+
+      // Animate stats when in viewport
+      const stats = document.querySelectorAll(".stat-number");
+
+      function animateStats() {
+        stats.forEach((stat) => {
+          const target = parseInt(stat.getAttribute("data-count"));
+          const count = +stat.innerText;
+          const speed = 100; // Lower is faster
+
+          if (count < target) {
+            const inc = target / speed > 1 ? Math.ceil(target / speed) : 1;
+            stat.innerText = count + inc;
+            setTimeout(animateStats, 1);
+          } else {
+            stat.innerText = target + (stat.innerText.includes("+") ? "+" : "");
+          }
+        });
+      }
+
+      // Start animation when the section is in view
+      const statsSection = document.querySelector(".company-stats");
+      let animated = false;
+
+      function checkIfInView() {
+        if (animated) return;
+
+        const rect = statsSection.getBoundingClientRect();
+        const isInViewport = rect.top < window.innerHeight && rect.bottom >= 0;
+
+        if (isInViewport) {
+          animateStats();
+          animated = true;
+        }
+      }
+
+      window.addEventListener("scroll", checkIfInView);
+      // Initial check
+      checkIfInView();
+
+      // Chatbot functionality
+      const chatbotIcon = document.getElementById("chatbotIcon");
+      const chatbotContainer = document.getElementById("chatbotContainer");
+      const closeChatbot = document.getElementById("closeChatbot");
+      const userInput = document.getElementById("userInput");
+      const sendMessage = document.getElementById("sendMessage");
+
+      // Toggle chatbot visibility
+      chatbotIcon.addEventListener("click", function () {
+        chatbotContainer.style.display = "flex";
+        chatbotIcon.style.display = "none";
+      });
+
+      // Close chatbot
+      closeChatbot.addEventListener("click", function () {
+        chatbotContainer.style.display = "none";
+        chatbotIcon.style.display = "flex";
+      });
+
+      // Send message functionality
+      sendMessage.addEventListener("click", function () {
+        sendUserMessage();
+      });
+
+      userInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          sendUserMessage();
+        }
+      });
+
+      // Function to send user message and get response
+      function sendUserMessage() {
+        const message = userInput.value.trim();
+        if (!message) return;
+
+        // Display user message
+        displayMessage(message, "user");
+        userInput.value = "";
+
+        // Get simple AI response
+        setTimeout(() => {
+          const response = getSimpleResponse(message);
+          displayMessage(response, "bot");
+        }, 800);
+      }
+
+      // Function to display messages in the chatbot
+      function displayMessage(message, sender) {
+        const messageElement = document.createElement("div");
+        messageElement.classList.add("message");
+        messageElement.classList.add(sender + "-message");
+
+        const contentElement = document.createElement("div");
+        contentElement.classList.add("message-content");
+        contentElement.innerHTML = `<p>${message}</p>`;
+
+        messageElement.appendChild(contentElement);
+        chatbotMessages.appendChild(messageElement);
+
+        // Scroll to bottom of messages
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+
+      // Simple responses for the chatbot
+      function getSimpleResponse(message) {
+        const lowerMsg = message.toLowerCase();
+
+        if (lowerMsg.includes("hello") || lowerMsg.includes("hi")) {
+          return "Hello! How can I help you today?";
+        } else if (lowerMsg.includes("help")) {
+          return "I'm here to help! You can ask me about our chatbot services, features, pricing, or how to get started.";
+        } else if (
+          lowerMsg.includes("price") ||
+          lowerMsg.includes("pricing") ||
+          lowerMsg.includes("cost")
+        ) {
+          return "Our pricing starts at $99/month for the Basic plan. We also offer Professional ($249/month) and Enterprise (custom pricing) plans. Would you like more details?";
+        } else if (lowerMsg.includes("about")) {
+          return "We're an innovative AI company founded in 2018. Our team of experts develops advanced chatbot solutions to help businesses enhance customer experiences and streamline operations.";
+        } else if (
+          lowerMsg.includes("contact") ||
+          lowerMsg.includes("support")
+        ) {
+          return "You can reach our support team at support@aichatbot.com or call us. Would you like me to provide a link to our contact page?";
+        } else if (lowerMsg.includes("thank")) {
+          return "You're welcome! Is there anything else I can help you with?";
+        } else {
+          return "I appreciate your message. Could you provide more details so I can better assist you? You can ask about our services, features, pricing, or how to get started.";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot - Intelligent Conversations for Your Business</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>ChatBot<span>AI</span></h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href={% url 'index' %} class="active">Home</a></li>
+        <li><a  href={% url 'services'%} >Services</a></li>
+        <li><a href={% url 'about' %}>About</a></li>
+        <li><a href={% url 'features' %}>Features</a></li>
+        <li><a href={% url 'contact' %}>Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href={% url 'login' %} class="btn btn-outline">Login</a>
+        <a href={% url 'signup' %} class="btn btn-primary">Sign Up</a>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Transform Your Business with AI-Powered Conversations</h1>
+        <p>
+          Our AI chatbot provides intelligent, human-like interactions to
+          enhance customer experience and drive business growth.
+        </p>
+        <div class="hero-buttons">
+          <a href="signup.html" class="btn btn-primary btn-large"
+            >Get Started</a
+          >
+          <a href="#demo" class="btn btn-outline btn-large">See Demo</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+        <img src={% static 'images/featuresImg.webp' %} alt="AI Chatbot Interface" />
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-highlight">
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Choose Our AI Chatbot?</h2>
+          <p>Powerful features designed to enhance your business</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>AI-Powered</h3>
+            <p>Advanced machine learning algorithms that improve over time</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Provide instant responses to customer inquiries anytime</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Analytics</h3>
+            <p>Gain insights from conversations to improve your business</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3>Customizable</h3>
+            <p>Tailor the chatbot to fit your specific business needs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+      <div class="container">
+        <div class="section-header">
+          <h2>See Our Chatbot in Action</h2>
+          <p>
+            Experience how our AI chatbot can transform your customer service
+          </p>
+        </div>
+        <div class="demo-content">
+          <div class="demo-video">
+            <iframe
+              src="https://www.youtube.com/embed/placeholder"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="demo-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Natural language processing</li>
+              <li><i class="fas fa-check"></i> Multi-language support</li>
+              <li><i class="fas fa-check"></i> Seamless integration</li>
+              <li><i class="fas fa-check"></i> Analytics dashboard</li>
+            </ul>
+            <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Clients Say</h2>
+          <p>Success stories from businesses using our AI chatbot</p>
+        </div>
+        <div class="testimonial-slider">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>
+                "The chatbot has significantly reduced our customer service
+                response time. Our customers love the instant support!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <img src={% static 'images/image09.jpg' %} alt="Client 1" />
+              <div>
+                <h4>Sarah Johnson</h4>
+                <p>Tech Solutions Inc.</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+              </div>
+              <p>
+                "Since implementing the AI chatbot, we've seen a 40% reduction
+                in support tickets and a 25% increase in customer satisfaction."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <img src= {% static 'images/image08.jpg' %} alt="Client 2" />
+              <div>
+                <h4>Michael Chen</h4>
+                <p>Global Retail</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to Transform Your Customer Experience?</h2>
+        <p>
+          Join thousands of businesses already using our AI chatbot solutions
+        </p>
+        <div class="cta-buttons">
+          <a href="signup.html" class="btn btn-primary btn-large"
+            >Get Started</a
+          >
+          <a href="contact.html" class="btn btn-outline btn-large"
+            >Contact Sales</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>AI<span>Chatbot</span></h2>
+          <p>Intelligent conversations for your business</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="services.html#chatbot">AI Chatbot</a></li>
+              <li><a href="services.html#support">Customer Support</a></li>
+              <li><a href="services.html#lead">Lead Generation</a></li>
+              <li><a href="services.html#analytics">Data Analytics</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a href="mailto:info@aichatbot.com">info@aichatbot.com</a>
+              </li>
+              <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+              <li><a href="contact.html">123 AI Street, Tech City</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Subscribe to our newsletter</h3>
+          <p>Get the latest updates and news</p>
+          <form>
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 AI Chatbot. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon" id="chatbotIcon">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>AI Chatbot Assistant</h3>
+        <button class="close-btn" id="closeChatbot">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot-message">
+          <div class="message-content">
+            <p>Hello! How can I help you today?</p>
+          </div>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src=""></script>
+  </body>
+</html>

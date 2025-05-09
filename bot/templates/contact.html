@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - AI Chatbot</title>
+    <link rel="stylesheet" href={% static 'styles.css' %} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>AI<span>Chatbot</span></h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href={% url 'index' %} class="active">Home</a></li>
+        <li><a  href={% url 'services'%} >Services</a></li>
+        <li><a href={% url 'about' %}>About</a></li>
+        <li><a href={% url 'features' %}>Features</a></li>
+        <li><a href={% url 'contact' %}>Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href={% url 'login' %} class="btn btn-outline">Login</a>
+        <a href={% url 'signup' %} class="btn btn-primary">Sign Up</a>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team for any inquiries or support</p>
+      </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+      <div class="container">
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Our Location</h3>
+            <p>123 AI Street, Tech City</p>
+            <p>Silicon Valley, CA 94043</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Phone</h3>
+            <p>Sales: +1 (234) 567-8900</p>
+            <p>Support: +1 (234) 567-8901</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <p>info@aichatbot.com</p>
+            <p>support@aichatbot.com</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Business Hours</h3>
+            <p>Monday-Friday: 9am - 6pm</p>
+            <p>Weekend: Closed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form and Map -->
+    <section class="contact-main-section">
+      <div class="container">
+        <div class="contact-content">
+          <div class="contact-form-container">
+            <h2>Send Us a Message</h2>
+            <p>
+              Fill out the form below and we'll get back to you as soon as
+              possible
+            </p>
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Subject of your message"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Write your message here"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group form-checkbox">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent"
+                  >I consent to having this website store my submitted
+                  information so they can respond to my inquiry</label
+                >
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div class="contact-map">
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.6394389388924!2d-122.08427028469064!3d37.4229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbce5c8f71f9d%3A0x6d883f74f8429c3e!2sSilicon%20Valley!5e0!3m2!1sen!2sus!4v1627384352885!5m2!1sen!2sus"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sales and Support Options -->
+    <section class="support-options">
+      <div class="container">
+        <div class="section-header">
+          <h2>How Can We Help?</h2>
+          <p>Choose the right department for your needs</p>
+        </div>
+        <div class="options-grid">
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3>Sales</h3>
+            <p>
+              Interested in our products? Our sales team is ready to help you
+              find the right solution for your business.
+            </p>
+            <a href="mailto:sales@aichatbot.com" class="btn btn-outline"
+              >Contact Sales</a
+            >
+          </div>
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Technical Support</h3>
+            <p>
+              Need help with your chatbot implementation? Our technical team is
+              available to assist you.
+            </p>
+            <a href="mailto:support@aichatbot.com" class="btn btn-outline"
+              >Get Support</a
+            >
+          </div>
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="fas fa-file-contract"></i>
+            </div>
+            <h3>Partnership</h3>
+            <p>
+              Interested in partnering with us? Let's explore how we can work
+              together to create value.
+            </p>
+            <a href="mailto:partnerships@aichatbot.com" class="btn btn-outline"
+              >Discuss Partnership</a
+            >
+          </div>
+          <div class="option-card">
+            <div class="option-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>Careers</h3>
+            <p>
+              Looking to join our team? Check out our current openings or send
+              us your resume.
+            </p>
+            <a href="careers.html" class="btn btn-outline"
+              >View Opportunities</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Find quick answers to common questions</p>
+        </div>
+        <div class="faq-accordions">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How long does it take to implement the chatbot?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Implementation time varies depending on your specific
+                requirements and the complexity of your business. Basic
+                implementations can be completed in as little as 2-3 weeks,
+                while more complex integrations may take 4-8 weeks.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I customize the chatbot to match my brand?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, our AI chatbot is fully customizable. You can adapt the
+                appearance, language, and personality to match your brand
+                identity and communication style.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What languages does the chatbot support?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Our chatbot supports over 50 languages including English,
+                Spanish, French, German, Chinese, Japanese, Arabic, and more. If
+                you need a specific language, please contact our sales team.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you offer a free trial?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, we offer a 14-day free trial with all features included.
+                You can sign up for a trial account on our website with no
+                credit card required.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>AI<span>Chatbot</span></h2>
+          <p>Intelligent conversations for your business</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="services.html#chatbot">AI Chatbot</a></li>
+              <li><a href="services.html#support">Customer Support</a></li>
+              <li><a href="services.html#lead">Lead Generation</a></li>
+              <li><a href="services.html#analytics">Data Analytics</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a href="mailto:info@aichatbot.com">info@aichatbot.com</a>
+              </li>
+              <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+              <li><a href="contact.html">123 AI Street, Tech City</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Subscribe to our newsletter</h3>
+          <p>Get the latest updates and news</p>
+          <form>
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 AI Chatbot. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon" id="chatbotIcon">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>AI Chatbot Assistant</h3>
+        <button class="close-btn" id="closeChatbot">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot-message">
+          <div class="message-content">
+            <p>Hello! How can I help you today?</p>
+          </div>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // FAQ accordion functionality
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+          faqItem.classList.toggle("active");
+
+          // Close other open FAQs
+          document.querySelectorAll(".faq-item").forEach((item) => {
+            if (item !== faqItem && item.classList.contains("active")) {
+              item.classList.remove("active");
+            }
+          });
+        });
+      });
+
+      // Contact form submission
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Add contact form submission logic here
+          console.log("Contact form submitted");
+          // Show success message
+          alert("Thank you for your message! We will get back to you soon.");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

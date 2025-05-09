@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features - AI Chatbot</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>AI<span>Chatbot</span></h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href={% url 'index' %} class="active">Home</a></li>
+        <li><a  href={% url 'services'%} >Services</a></li>
+        <li><a href={% url 'about' %}>About</a></li>
+        <li><a href={% url 'features' %}>Features</a></li>
+        <li><a href={% url 'contact' %}>Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href={% url 'login' %} class="btn btn-outline">Login</a>
+        <a href={% url 'signup' %} class="btn btn-primary">Sign Up</a>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <!-- Features Hero Section -->
+    <section class="page-header">
+      <div class="container">
+        <h1>AI Chatbot Features</h1>
+        <p>
+          Discover the powerful capabilities that make our chatbot stand out
+        </p>
+      </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="core-features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Core Features</h2>
+          <p>Essential capabilities built into every AI Chatbot</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Natural Language Processing</h3>
+            <p>
+              Advanced NLP algorithms that understand and interpret human
+              language, context, and intent for natural conversations.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Multi-language Support</h3>
+            <p>
+              Support for over 50 languages, allowing businesses to communicate
+              with customers worldwide in their native language.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3>Continuous Learning</h3>
+            <p>
+              Machine learning algorithms that improve over time based on
+              interactions, becoming smarter and more accurate.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-plug"></i>
+            </div>
+            <h3>Easy Integration</h3>
+            <p>
+              Seamless integration with websites, apps, and popular messaging
+              platforms like Facebook, WhatsApp, and Slack.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Features -->
+    <section class="technical-features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Technical Features</h2>
+          <p>The technology behind our powerful AI chatbot</p>
+        </div>
+        <div class="tech-features-content">
+          <div class="tech-image">
+            <img
+              src="images/tech-architecture.jpg"
+              alt="Technical Architecture"
+            />
+          </div>
+          <div class="tech-list">
+            <div class="tech-item">
+              <h3><i class="fas fa-code"></i> RESTful API</h3>
+              <p>
+                Well-documented APIs for easy integration with your existing
+                systems and applications.
+              </p>
+            </div>
+            <div class="tech-item">
+              <h3><i class="fas fa-database"></i> MongoDB Integration</h3>
+              <p>
+                Secure, scalable database integration for storing conversation
+                history and training data.
+              </p>
+            </div>
+            <div class="tech-item">
+              <h3><i class="fas fa-shield-alt"></i> End-to-End Encryption</h3>
+              <p>
+                Enterprise-grade security with encrypted data transmission and
+                storage.
+              </p>
+            </div>
+            <div class="tech-item">
+              <h3><i class="fas fa-chart-bar"></i> Analytics Dashboard</h3>
+              <p>
+                Comprehensive analytics platform providing insights into user
+                interactions and chatbot performance.
+              </p>
+            </div>
+            <div class="tech-item">
+              <h3><i class="fas fa-cloud"></i> Cloud Deployment</h3>
+              <p>
+                Scalable cloud infrastructure ensuring high availability and
+                performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Capabilities -->
+    <section class="smart-capabilities">
+      <div class="container">
+        <div class="section-header">
+          <h2>Smart Capabilities</h2>
+          <p>Advanced AI features that set our chatbot apart</p>
+        </div>
+        <div class="capabilities-wrapper">
+          <div class="capability-tabs">
+            <div class="capability-tab active" data-tab="sentiment">
+              Sentiment Analysis
+            </div>
+            <div class="capability-tab" data-tab="context">
+              Contextual Understanding
+            </div>
+            <div class="capability-tab" data-tab="personalization">
+              Personalization
+            </div>
+            <div class="capability-tab" data-tab="handover">Smart Handover</div>
+          </div>
+          <div class="capability-content">
+            <div class="capability-panel active" id="sentiment">
+              <div class="capability-description">
+                <h3>Sentiment Analysis</h3>
+                <p>
+                  Our AI chatbot can detect the emotional tone behind text
+                  conversations, recognizing when a customer is frustrated,
+                  satisfied, or confused. This allows the chatbot to adapt its
+                  responses accordingly or escalate to a human agent when
+                  necessary.
+                </p>
+                <ul class="capability-features">
+                  <li>
+                    <i class="fas fa-check-circle"></i> Detects positive,
+                    negative, and neutral sentiment
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Identifies emotional
+                    intensity
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Adapts responses based
+                    on detected sentiment
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Tracks sentiment trends
+                    over time
+                  </li>
+                </ul>
+              </div>
+              <div class="capability-image">
+                <img
+                  src="images/sentiment-analysis.jpg"
+                  alt="Sentiment Analysis"
+                />
+              </div>
+            </div>
+            <div class="capability-panel" id="context">
+              <div class="capability-description">
+                <h3>Contextual Understanding</h3>
+                <p>
+                  Unlike basic chatbots that respond to individual messages in
+                  isolation, our AI chatbot maintains context throughout the
+                  conversation. It remembers previous exchanges and understands
+                  references to earlier topics, creating more natural,
+                  human-like interactions.
+                </p>
+                <ul class="capability-features">
+                  <li>
+                    <i class="fas fa-check-circle"></i> Maintains conversation
+                    history
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Understands pronoun
+                    references
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Recognizes topic
+                    continuity
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Follows complex
+                    conversation flows
+                  </li>
+                </ul>
+              </div>
+              <div class="capability-image">
+                <img
+                  src="images/contextual-understanding.jpg"
+                  alt="Contextual Understanding"
+                />
+              </div>
+            </div>
+            <div class="capability-panel" id="personalization">
+              <div class="capability-description">
+                <h3>Personalization</h3>
+                <p>
+                  Our chatbot learns from each interaction to provide
+                  increasingly personalized experiences. By recognizing
+                  returning users and remembering their preferences, the chatbot
+                  can offer tailored recommendations and responses that feel
+                  custom-made for each user.
+                </p>
+                <ul class="capability-features">
+                  <li><i class="fas fa-check-circle"></i> User recognition</li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Preference tracking
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Personalized
+                    recommendations
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Adaptive conversation
+                    style
+                  </li>
+                </ul>
+              </div>
+              <div class="capability-image">
+                <img src="images/personalization.jpg" alt="Personalization" />
+              </div>
+            </div>
+            <div class="capability-panel" id="handover">
+              <div class="capability-description">
+                <h3>Smart Handover</h3>
+                <p>
+                  Our AI chatbot knows when to pass a conversation to a human
+                  agent. By recognizing complex queries, high emotional
+                  distress, or specific request patterns, the chatbot ensures
+                  customers always receive the appropriate level of support.
+                </p>
+                <ul class="capability-features">
+                  <li>
+                    <i class="fas fa-check-circle"></i> Automatic escalation
+                    triggers
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Smooth transition to
+                    human agents
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Complete conversation
+                    history transfer
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Priority-based queuing
+                  </li>
+                </ul>
+              </div>
+              <div class="capability-image">
+                <img src="images/smart-handover.jpg" alt="Smart Handover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>How We Compare</h2>
+          <p>See how our AI Chatbot stacks up against other solutions</p>
+        </div>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Features</th>
+                <th>AI Chatbot</th>
+                <th>Basic Chatbots</th>
+                <th>Human Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>24/7 Availability</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-times"></i></td>
+              </tr>
+              <tr>
+                <td>Natural Language Understanding</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Context Retention</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Multi-language Support</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-times"></i></td>
+                <td>Limited</td>
+              </tr>
+              <tr>
+                <td>Sentiment Analysis</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Scalability</td>
+                <td>Unlimited</td>
+                <td>High</td>
+                <td>Low</td>
+              </tr>
+              <tr>
+                <td>Cost Efficiency</td>
+                <td>High</td>
+                <td>Medium</td>
+                <td>Low</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Experience These Features?</h2>
+        <p>
+          Start with a free trial today and see how our AI chatbot can transform
+          your customer experience
+        </p>
+        <div class="cta-buttons">
+          <a href="signup.html" class="btn btn-primary btn-large"
+            >Start Free Trial</a
+          >
+          <a href="contact.html" class="btn btn-outline btn-large"
+            >Request Demo</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>AI<span>Chatbot</span></h2>
+          <p>Intelligent conversations for your business</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="services.html#chatbot">AI Chatbot</a></li>
+              <li><a href="services.html#support">Customer Support</a></li>
+              <li><a href="services.html#lead">Lead Generation</a></li>
+              <li><a href="services.html#analytics">Data Analytics</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a href="mailto:info@aichatbot.com">info@aichatbot.com</a>
+              </li>
+              <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+              <li><a href="contact.html">123 AI Street, Tech City</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Subscribe to our newsletter</h3>
+          <p>Get the latest updates and news</p>
+          <form>
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 AI Chatbot. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon" id="chatbotIcon">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>AI Chatbot Assistant</h3>
+        <button class="close-btn" id="closeChatbot">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot-message">
+          <div class="message-content">
+            <p>Hello! How can I help you today?</p>
+          </div>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Tab functionality for the Smart Capabilities section
+      const tabs = document.querySelectorAll(".capability-tab");
+      const panels = document.querySelectorAll(".capability-panel");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active class from all tabs and panels
+          tabs.forEach((t) => t.classList.remove("active"));
+          panels.forEach((p) => p.classList.remove("active"));
+
+          // Add active class to current tab
+          tab.classList.add("active");
+
+          // Show corresponding panel
+          const panelId = tab.getAttribute("data-tab");
+          document.getElementById(panelId).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
