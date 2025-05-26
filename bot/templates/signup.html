@@ -30,22 +30,19 @@
 
     <!-- Signup Section -->
     <section class="auth-section">
-      <div class="auth-container">
-        <div class="auth-header">
-          <h2>Create an Account</h2>
-          <p>Sign up to experience the power of our AI Chatbot</p>
-        </div>
-        {% load static %}
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Sign up</button>
-</form>
-        <div class="auth-footer">
-          <p>Already have an account? <a href="login.html">Log In</a></p>
-        </div>
-      </div>
-    </section>
+  <div class="auth-container">
+    <h2>Sign Up</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn-submit">Sign up</button>
+    </form>
+    <div class="auth-footer">
+      <p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer>

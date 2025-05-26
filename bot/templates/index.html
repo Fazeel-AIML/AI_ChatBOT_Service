@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   {% load static %}
+
+{% if user.is_authenticated %}
+  <div style="padding: 1rem; background-color: #f0f8ff; border-radius: 10px; margin-bottom: 1rem;">
+    <h2 style="color: #333; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+      🌟 Welcome back, <span style="color: #007BFF;">{{ user.first_name|default:user.username }}</span>!
+    </h2>
+    <p style="color: #555;">Have a great time exploring our platform.</p>
+
+    <form method="post" action="{% url 'logout' %}" style="display:inline;">
+      {% csrf_token %}
+      <button type="submit" style="background:none; border:none; color:#007BFF; text-decoration:underline; cursor:pointer;">
+        Logout
+      </button>
+    </form>
+  </div>
+{% else %}
+  <a href="{% url 'login' %}">Login</aa>
+{% endif %}
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

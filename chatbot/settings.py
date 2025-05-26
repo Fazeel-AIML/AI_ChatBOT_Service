@@ -125,12 +125,15 @@ STATIC_URL = '/static/'  # ✅ Don't hardcode app name here
 STATICFILES_DIRS = [
     BASE_DIR / 'bot' / 'static'  # ✅ Correct path without raw string
 ]
-
-LOGIN_URL = '/login/'           # Redirects here if not authenticated
-LOGIN_REDIRECT_URL = '/'        # After login, redirect here
-LOGOUT_REDIRECT_URL = '/login/' # After logout
-
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'login'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Do NOT expire sessions on browser close
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+
+# Set session to persist for 30 days (in seconds)
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
